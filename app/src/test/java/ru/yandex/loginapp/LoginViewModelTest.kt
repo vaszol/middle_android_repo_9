@@ -56,7 +56,7 @@ class LoginViewModelTest {
         testDispatcher.scheduler.runCurrent()
         testDispatcher.scheduler.advanceTimeBy(2000)
         assertEquals(LoginScreenState.Loading, viewModel.state.value)
-        testDispatcher.scheduler.advanceTimeBy(4000)
+        testDispatcher.scheduler.advanceUntilIdle()
         assertEquals(LoginScreenState.Success, viewModel.state.value)
     }
 }
